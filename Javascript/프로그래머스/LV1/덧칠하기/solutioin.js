@@ -18,3 +18,4 @@ function solution(n, m, section) {
   }
   return count
 }
+//단순 구현 문제
