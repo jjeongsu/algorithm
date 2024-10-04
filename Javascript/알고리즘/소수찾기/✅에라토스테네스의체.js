@@ -7,6 +7,7 @@ function isPrime(n) {
   for (let i = 2; i * i <= n; i++) {
     if (array[i]) {
       for (let j = i * i; j <= n; j += i) {
+        //j는 i*i부터 인거 중요!
         array[j] = false
       }
     }
