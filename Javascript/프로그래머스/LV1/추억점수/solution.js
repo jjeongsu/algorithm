@@ -7,10 +7,10 @@ function solution(name, yearning, photo) {
   // photo의 각 요소별로 점수를 계산하기
   const result = photo.map(pic => {
     let count = 0 // 추억 점수 계산
+    // 사진 하나를 가져와서
     pic.forEach(name => {
-      // 사진 하나를 가져와서
-      // 사진 속 인물의 점수가 계산 할 수 있다면
       if (score.has(name)) {
+        // 사진 속 인물의 점수가 계산 할 수 있다면
         count += score.get(name) // 추억점수에 추가
       }
     })
