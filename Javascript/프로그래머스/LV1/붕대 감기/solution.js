@@ -20,7 +20,7 @@ function solution(bandage, health, attack) {
         연속성공 = 1; // 연속성공을 초기화
       } else {
         //2.2 max가 아니라면 체력을 회복
-        체력 = 체력 + 체력회복 >= 최대체력 ? 최대체력 : 체력 + 체력회복;
+        체력 = 체력 + 체력회복 >= 최대체력 ? 최대체력 : 체력 + 체력회복; // 체력을 회복해도 최대체력을 초과하지 않아야 함
         연속성공++;
         // 이후 추가 체력을 회복할 수 있는 타이밍이면
         if (연속성공 === 최대체력회복시간) {
@@ -33,12 +33,10 @@ function solution(bandage, health, attack) {
       // 공격도중 죽으면 다시 살아날수 없다.
       return -1;
     }
-    console.log(t, 체력, 연속성공);
     t++;
   }
   return 체력;
 }
-console.log('testcase 1: 기대결과 18');
 console.log(
   solution([5, 3, 2], 30, [
     [1, 1],
