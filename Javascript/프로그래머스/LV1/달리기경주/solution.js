@@ -21,15 +21,6 @@ function solution(players, callings) {
   });
   return players;
 }
-// function moveElementForward(index, array, map) {
-//   // index의 유효성 검증
-//   if (index > 0 && index < array.length) {
-//     ;[array[index], array[index - 1]] = [array[index - 1], array[index]]
-//     map.set(array[index], index - 1)
-//     map.set(array[index - 1], index)
-//   }
-//   return array
-// }
 
 solution(['mumu', 'soe', 'poe', 'kai', 'mine'], ['kai', 'kai', 'mine', 'mine']);
 
