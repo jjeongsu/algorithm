@@ -4,7 +4,6 @@ function solution(k, dungeons) {
 
   function dfs(count, cur_p) {
     console.log(count);
-    // 완료조건
 
     // 다음노드 탐색
     for (let i = 0; i < dungeons.length; i++) {
