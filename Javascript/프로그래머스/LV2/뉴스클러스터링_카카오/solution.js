@@ -1,16 +1,10 @@
 function solution(strA, strB) {
   const str1 = strA.toLowerCase();
   const str2 = strB.toLowerCase();
-  let arr1 = [],
-    arr2 = [];
 
-  // 주어진 문자열로 가능한 모든 집합의 요소를 만든다.
-  for (let i = 0; i < str1.length - 1; i++) {
-    arr1.push(str1.slice(i, i + 2));
-  }
-  for (let i = 0; i < str2.length - 1; i++) {
-    arr2.push(str2.slice(i, i + 2));
-  }
+  // 주어진 문자열로 가능한 모든 문자쌍을 만든다.
+  let arr1 = makeCharPair(str1);
+  let arr2 = makeCharPair(str2);
 
   //필요없는 문자쌍은 버린다.
   arr1 = removeInvalidChar(arr1);
@@ -43,6 +37,15 @@ function solution(strA, strB) {
 }
 
 console.log(solution('FRENCH', 'FRANCE'));
+
+function makeCharPair(str) {
+  const arr = [];
+  for (let i = 0; i < str.length - 1; i++) {
+    arr.push(str1.slice(i, i + 2));
+  }
+  return arr;
+}
+
 // 필요없는 쌍은 버리고, 유효한 집합 요소만 return
 function removeInvalidChar(arr) {
   const regex = /[^a-zA-Z]/;
