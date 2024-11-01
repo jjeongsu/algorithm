@@ -81,6 +81,7 @@ function solution(fees, records) {
   return result.sort((a, b) => Number(a[0]) - Number(b[0])).map(e => e[1]);
 }
 
+// NOTE : 시간계산
 function calculateTimeGap(startTime, endTime) {
   const start = new Date(`1970-01-01T${startTime}:00`);
   const end = new Date(`1970-01-01T${endTime}:00`);
