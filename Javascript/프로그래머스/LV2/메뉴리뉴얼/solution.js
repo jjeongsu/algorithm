@@ -6,14 +6,15 @@ function solution(orders, course) {
 
   // 문자열을 재구성할 재귀함수
   function recursive(word, arr) {
+    console.log('재귀 시작', 'word', word, 'arr', arr);
     if (arr.length < 1) return;
 
     for (let i = 0; i < arr.length; i++) {
       const newWord = word + arr[i]; // 이전 단계에서 자른 문자에 다음 index의 문자를 조합한다.
+      console.log(newWord);
       if (course.includes(newWord.length)) {
         menu[newWord] ? menu[newWord]++ : (menu[newWord] = 1);
       }
-
       recursive(newWord, arr.slice(i + 1));
     }
   }
@@ -25,7 +26,6 @@ function solution(orders, course) {
       // v:  [ 'A', 'B', 'C', 'D', 'E' ]
       // 문자열을 배열로 분리하고 순회한다.
       for (let i = 0; i < v.length; i++) {
-        console.log('v slice', v.slice(i + 1));
         recursive(v[i], v.slice(i + 1)); // 문자열을 하나씩 재귀적으로 순회하며 재구성한다.
       }
       return;
